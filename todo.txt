@@ -1,0 +1,12 @@
+In order:
+
+Fix img ticker shit
+
+Fill out stuff for Experience, and add a ticker for all technologies i know and am good with - see more in main.ts
+
+(optional - dark mode light mode switch somwehere idk if its useful prolly not, prolly yes to flex knowledge)
+
+Portfolio big challenge
+somehow connect my github via API onto project portfolio and for each project, if it has a batch of certain files (for example, if I upload my uni dissertation onto github, and it has a screenshot.png, blurb.txt and other, it will automatically sned to my portfolio website in a way that looks goods and functions well)
+
+yep connect to internet ig - after various code polishing.

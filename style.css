@@ -1,0 +1,191 @@
+* { /* allow some default settings regardless of class */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    height: 100vh;
+    background: #0f0f0f;
+    color: #e6e6e6;
+}
+
+/* Main container section */
+
+.container { /* main container for both panels */
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+.container::after { /* Golden bar divider between left and right panel */
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 45%;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        #2c220d,
+        #7d6424,
+        #2c220d
+    );
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+/* Left Panel Section*/
+
+.left-panel {
+    width: 45%;
+    background: #111;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+
+/* Profile Pic section */
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 35%; /* Dont really want profile picture to be too circular. may change later */
+    object-fit: cover;
+    display: block;
+}
+
+.profile-pic-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 50px;
+}
+
+/* darkening border of profile picture - kinda works? */
+
+.profile-pic-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 35%;
+
+    background: radial-gradient(
+        circle,
+        rgba(0,0,0,0.15) 20%, /* RGBA colour as normal, percentage is gradient amount */
+        rgba(0,0,0,0.65) 75%,
+        rgba(0,0,0,0.85) 100%
+    );
+    pointer-events: none;
+}
+
+/* Biography Container section */
+
+.bio-container {
+    max-width: 65%;
+    text-align: center;
+}
+
+.bio-container p { /* makes name pop out a little more by making the title less opaque */
+    opacity: 45%;
+}
+
+/* Ticker Section */
+
+/* Socials container */
+
+.social-container { /* this is located at the bottom of the left panel */
+    margin-top: auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25%;
+    width: 100%;
+    position: relative;
+    padding-top: 25px;
+}
+
+.social-container::before { /* added a gradient at the top of the social container, similar to the divider, just to add more */
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        #2c220d,
+        #7d6424,
+        #2c220d
+    );
+
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+}
+
+.social-icon { /* defaults for each icon used. */
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-icon:hover { /* added flavour for when cursor is over an icon */
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Right panel section*/
+
+.right-panel {
+    width: 55%;
+    padding: 40px;
+    overflow-y: auto;
+    background: #181818;
+}
+
+.download-container { /* Same as social container, but doesn't have golden divider - only used for CV download container */
+    margin-top: auto;
+    display: flex;
+    padding-bottom: 15px;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding-top: 10px;
+}
+
+.section {
+    position: relative;
+    margin-top: 0; /* remove any margin affecting top */
+    padding-top: 20px; /* optional: space below the top divider */
+}
+
+.section:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 0; /* stays at very top of section */
+    left: 0;
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        #2c220d,
+        #7d6424,
+        #2c220d
+    );
+
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+}
+
+.section h2 {
+    margin-top: 0; /* remove default top margin */
+    padding-top: 10px; /* optional spacing between divider and header */
+}
+
+.section p {
+    padding-bottom: 30px;
+    opacity: 0.75; /* fixed opacity */
+}
