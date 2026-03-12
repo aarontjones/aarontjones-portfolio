@@ -2,6 +2,9 @@ use "npx tsc" to recompile when editing
 
 git commands:
 
+when changing:
 
+" git commit -M "message" "
+" git push "
 
 use "git pull origin main to pull from repo"
