@@ -1,4 +1,3 @@
-This is my portfolio website.
-It is written in TypeScript and CSS, without any framework.
+This is my portfolio website, written in TypeScript and CSS.
 
-This was mainly an exercise to improve my TypeScript skills, as I don't have much experience with it.
+I used TypeScript as I needed to practice my skills with it, as I don't have much experience with it than I do with frameworks such as Django.
