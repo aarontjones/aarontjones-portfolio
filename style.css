@@ -452,7 +452,7 @@ body.light-mode .project-screenshot {
 /* Smaller Screen Section */
 /* When using website on phone, it wont look good, so this is to help that */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 568px) {
 
   /* Make container vertical */
   .container {
