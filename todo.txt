@@ -1,12 +1,19 @@
-In order:
+In order of importance:
 
-Revamp portfolio section - so it includes a screenshot and the title underneath, then when you hover over it, it slides down a bit to the description and github link
-
+// Profile Pic
 Find out a way to get profile pic to hide particles.
+change pfp to not be local img, but instead take it from github profile picture.
 
+// Size adjustments
+If window is shrunk horizontally, it should change layout, so everything is in one track, the vertical divider is horizontal just below where socials are, and all is normal beyond that. - particles only still in 'left' panel.
 
-API rate limiting - saves information and reloads only at night - prolly works if i host on server
+// Dark mode switch:
+Add dark mode switch, which changes the website either in gradient or instantly
 
-(optional - dark mode light mode switch somwehere idk if its useful prolly not, prolly yes to flex knowledge)
+// Just before Launch
+add code for API rate limiting when website - Saves information in local csv file with 
+look through all files and document correctly - add comments
+Just for me - notifications / insight for whenever someone visits website - find out after I know what hosting service
 
-yep connect to internet ig - after various code polishing.
+// launch it
+Connect to internet - also figure out what I want to call it.

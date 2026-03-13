@@ -1,2 +1,4 @@
-It doesn't matter whats on this file, just as long as this is in the github root directory, it is included in my porfolio website.
-Its not really a good way of doing this, but it works.
+This is my portfolio website.
+It is written in TypeScript and CSS, without any framework.
+
+This was mainly an exercise to improve my TypeScript skills, as I don't have much experience with it.

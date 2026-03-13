@@ -1,4 +1,4 @@
-* { /* allow some default settings regardless of class */
+* { /* some default settings */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,13 +6,11 @@
 }
 
 body {
-    height: 100vh;
     background: #0f0f0f;
     color: #e6e6e6;
 }
 
 /* Main container section */
-
 .container { /* main container for both panels */
     display: flex;
     height: 100vh;
@@ -37,7 +35,6 @@ body {
 }
 
 /* Left Panel Section*/
-
 .left-panel {
     width: 45%;
     background: #111;
@@ -45,11 +42,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: sticky; /* stays fixed while scrolling */
+    position: sticky; /* when you scroll down, it sticks to the side */
     top: 0;
     z-index: 1;
 }
-
 
 /* Profile Pic section */
 .profile-pic {
@@ -219,7 +215,7 @@ body {
 .section:not(:first-child)::before {
     content: "";
     position: absolute;
-    top: 0; /* stays at very top of section */
+    top: 0;
     left: 0;
     width: 100%;
     height: 2px;
@@ -244,7 +240,48 @@ body {
     opacity: 0.75; /* fixed opacity */
 }
 
-/* Github Portfolio Styling - Overhaul */
+/* Github Portfolio Styling */
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-header h3 {
+    margin: 0;
+}
+
+.project-header a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.project-header a:hover {
+    text-decoration: underline;
+
+}
+
+.project-screenshot-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    display: flex;
+    justify-content: center;
+}
+
+.project-screenshot {
+    width: 100%;
+    max-width: 90%;
+    border-radius: 6px;
+    margin: 12px 0;
+    border: 2px solid transparent;
+    background:
+        linear-gradient(#111, #111) padding-box,
+        linear-gradient(to right, #2c220d, #7d6424, #2c220d) border-box;
+}
 
 .project-container {
     display: flex;
@@ -284,7 +321,11 @@ body {
     transition: opacity 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover effect */
+/* Hover effects for portfolio */
+
+.project-card:hover .project-screenshot-container {
+    max-height: 500px;
+}
 
 .project-card:hover::before {
     opacity: 1;

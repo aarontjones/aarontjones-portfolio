@@ -227,23 +227,49 @@ async function loadGitHubProjects() {
 
             if (!checkFile.ok) continue
 
+            // Screenshot Gathering
+            const screenshotURL = `https://raw.githubusercontent.com/${username}/${repo.name}/main/Screenshot.png`
+
+            const screenshotContainer = document.createElement("div")
+            screenshotContainer.className = "project-screenshot-container"
+
+            const screenshot  = document.createElement("img")
+            screenshot.src = screenshotURL
+            screenshot.className = "project-screenshot"
+
+            // If image is not loading
+            screenshot.onerror = () => {
+                screenshotContainer.remove()
+            }
+
+            screenshotContainer.appendChild(screenshot)
+
+            // assembling each card
             const card = document.createElement("div")
             card.className = "project-card"
 
-            const title = document.createElement("h3")
-            title.innerText = repo.name
 
             const description = document.createElement("p")
             description.innerText = repo.description || "No description provided."
+
+            // creating a header of the title and link
+            const header = document.createElement("div")
+            header.className = "project-header"
+
+            const title = document.createElement("h3")
+            title.innerText = repo.name
 
             const link = document.createElement("a")
             link.href = repo.html_url
             link.target = "_blank"
             link.innerText = "View on GitHub"
 
-            card.appendChild(title)
-            card.appendChild(description)
-            card.appendChild(link)
+            header.appendChild(title)
+            header.appendChild(link)
+
+            card.appendChild(header) // Title and Github Link
+            card.appendChild(description) // Description
+            card.appendChild(screenshotContainer) // Screenshot
 
             projectContainer.appendChild(card)
         } catch (err) {
