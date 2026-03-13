@@ -1,10 +1,10 @@
 In order of importance:
 
 // Just before Launch
-1) Clean up light mode
-2) Clean up smaller window size views
-3) Prepare code for API rate limiting
-4) Sort out all code with proper comments
+
+1) Sort out all code with proper comments
+2) Prepare code for API rate limiting
+
 
 // launch it
 Connect to internet - also figure out what I want to call it.

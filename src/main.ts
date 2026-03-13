@@ -161,7 +161,8 @@ socialContainer.appendChild(emailLink)
 
 // assemble left panel
 
-leftPanel.appendChild(particlesBg)
+// leftPanel.appendChild(particlesBg)
+container.insertBefore(particlesBg, container.firstChild)
 leftPanel.appendChild(darkModeButton)
 leftPanel.appendChild(profilePicContainer)
 leftPanel.appendChild(bioContainer)
@@ -170,18 +171,35 @@ leftPanel.appendChild(socialContainer)
 
 //Dark Mode Toggle
 darkModeButton.addEventListener("click", () => {
-    const lightMode = document.body.classList.toggle("light-mode"); // returns true if added
+    const lightMode = document.body.classList.toggle("light-mode"); // toggle class
+
+    const color = lightMode ? "#7b5cff" : "#d4af37"; // purple or gold
 
     if (particlesInstance) {
-        const color = lightMode ? "#7b5cff" : "#d4af37"; // purple or gold
-        const linkColor = lightMode ? "#7b5cff" : "#d4af37";
-
-        // Update particle color
-        particlesInstance.options.particles.color.value = color;
-        particlesInstance.options.particles.links.color = linkColor;
-
-        // Refresh particles to apply new colors
-        particlesInstance.refresh();
+        // Reload tsParticles with updated colors
+        tsParticles.load("particles-left", {
+            fullScreen: { enable: false },
+            fpsLimit: false,
+            background: { color: "transparent" },
+            particles: {
+                number: { value: 50, density: { enable: true, area: 800 } },
+                color: { value: color }, // updated color
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 2, random: true },
+                links: {
+                    enable: true,
+                    distance: 200,
+                    color: color, // updated link color
+                    opacity: 0.25,
+                    width: 0.5
+                },
+                move: { enable: true, speed: 4, outModes: "out" }
+            },
+            detectRetina: true
+        }).then((container: any) => {
+            particlesInstance = container; // save new instance
+        });
     }
 });
 
