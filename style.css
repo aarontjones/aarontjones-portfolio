@@ -401,29 +401,20 @@ body.light-mode .dark-mode-button::before {
     transform: translateX(20px); /* slide knob to right */
 }
 
-/* LIGHT MODE COLORS */
 body.light-mode {
     background: #fefefe; /* main body background */
     color: #3c0d5b; /* dark purple text */
 }
 
-/* Left Panel */
 body.light-mode .left-panel {
     background: #ffffff;
     color: #3c0d5b;
 }
 
-/* Particles (optional: change color) */
-body.light-mode #particles-left {
-    /* can change particle color dynamically if needed */
-}
-
-/* Ticker */
 body.light-mode .ticker-item img {
     filter: hue-rotate(260deg) saturate(1.5); /* purple-ish tint */
 }
 
-/* Right Panel */
 body.light-mode .right-panel {
     background: #f5f5ff;
     color: #3c0d5b;
@@ -443,7 +434,6 @@ body.light-mode .project-card::before {
     box-shadow: 0 0 8px rgba(123, 92, 255, 0.5);
 }
 
-/* Project link hover colors */
 body.light-mode .project-header a,
 body.light-mode .project-card a {
     color: #7b5cff;
@@ -457,4 +447,94 @@ body.light-mode .project-screenshot {
     background:
         linear-gradient(#ffffff, #ffffff) padding-box,
         linear-gradient(to right, #a987fa, #7b5cff, #a987fa) border-box; /* match divider color */
+}
+
+/* Smaller Screen Section */
+/* When using website on phone, it wont look good, so this is to help that */
+
+@media screen and (max-width: 768px) {
+
+  /* Make container vertical */
+  .container {
+    flex-direction: column;
+    height: auto; /* let it grow with content */
+    position: relative;
+  }
+
+  /* Move divider below socials instead of vertical */
+  .container::after {
+    top: auto;
+    bottom: 30px; /* position just above the bottom padding or socials */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
+  }
+
+  /* Left panel full width */
+  .left-panel {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Keep particle effects absolute inside left panel */
+  #particles-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* reduce height for mobile, can adjust */
+  }
+
+  /* Right panel full width, stacked below left panel */
+  .right-panel {
+    width: 100%;
+    padding: 20px;
+    overflow: visible; /* no scroll inside panel, body scroll works */
+    margin-bottom: 30px;
+  }
+
+  /* Optional: remove sticky left panel */
+  .left-panel {
+    position: relative;
+  }
+
+  /* Adjust ticker for mobile */
+  .ticker-wrapper {
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Social container full width */
+  .social-container {
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust profile and bio containers */
+  .profile-pic-container {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bio-container {
+    max-width: 90%;
+  }
+
+  /* Portfolio: automatically expand all screenshots */
+  .project-screenshot-container {
+    max-height: 1000px !important; /* force open */
+  }
 }

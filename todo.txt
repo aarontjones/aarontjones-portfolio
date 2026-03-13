@@ -1,15 +1,10 @@
 In order of importance:
 
-// Size adjustments
-If window is shrunk horizontally, it should change layout, so everything is in one track, the vertical divider is horizontal just below where socials are, and all is normal beyond that. - particles only still in 'left' panel.
-
-// Dark mode switch:
-Add dark mode switch, which changes the website either in gradient or instantly
-
 // Just before Launch
-add code for API rate limiting when website - Saves information in local csv file with 
-look through all files and document correctly - add comments
-Just for me - notifications / insight for whenever someone visits website - find out after I know what hosting service
+1) Clean up light mode
+2) Clean up smaller window size views
+3) Prepare code for API rate limiting
+4) Sort out all code with proper comments
 
 // launch it
 Connect to internet - also figure out what I want to call it.
