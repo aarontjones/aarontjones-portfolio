@@ -1,19 +1,6 @@
 In order:
 
-
-
-Fill out experience
-
-Push to git
-
-Create Readme in Git, add Screenshot.png to git, and pull from git
-
-Revamp portfolio - so it includes a screenshot and the title underneath, then when you hover over it, it slides down a bit to the description and github link
-
-
-
-
-
+Revamp portfolio section - so it includes a screenshot and the title underneath, then when you hover over it, it slides down a bit to the description and github link
 
 Find out a way to get profile pic to hide particles.
 
