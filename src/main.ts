@@ -80,13 +80,13 @@ const ticker = document.createElement("div")
 ticker.className = "ticker"
 
 const technologies = [
-    {name: "CSS", icon: "./assets/icons/ticker/css.png" },
-    {name: "Docker", icon: "./assets/icons/ticker/docker.png" },
-    {name: "Github", icon: "./assets/icons/ticker/github.svg" },
-    {name: "HTML", icon: "./assets/icons/ticker/html.png" },
-    {name: "PHP", icon: "./assets/icons/ticker/php.png" },
-    {name: "Python", icon: "./assets/icons/ticker/python.png" },
-    {name: "Typescript", icon: "./assets/icons/ticker/typescript.png" }
+    {name: "CSS", icon: "./assets/icons/ticker/light/css.png" },
+    {name: "Docker", icon: "./assets/icons/ticker/light/docker.png" },
+    {name: "Github", icon: "./assets/icons/ticker/light/github.svg" },
+    {name: "HTML", icon: "./assets/icons/ticker/light/html.png" },
+    {name: "PHP", icon: "./assets/icons/ticker/light/php.png" },
+    {name: "Python", icon: "./assets/icons/ticker/light/python.png" },
+    {name: "Typescript", icon: "./assets/icons/ticker/light/typescript.png" }
 ]
 
 // Creating ticker items
@@ -125,7 +125,7 @@ linkedInLink.target = "_blank"
 // LinkedIn Icon
 
 const linkedInIcon = document.createElement("img")
-linkedInIcon.src = "./assets/icons/linkedin.png"
+linkedInIcon.src = "./assets/icons/logos/light/linkedin.png"
 linkedInIcon.className = "social-icon"
 
 linkedInLink.appendChild(linkedInIcon)
@@ -137,7 +137,7 @@ githubLink.href = "https://github.com/aarontjones"
 githubLink.target = "_blank"
 
 const githubIcon = document.createElement("img")
-githubIcon.src = "./assets/icons/github.svg"
+githubIcon.src = "./assets/icons/logos/light/github.svg"
 githubIcon.className = "social-icon"
 
 githubLink.appendChild(githubIcon)
@@ -148,7 +148,7 @@ const emailLink = document.createElement("a")
 emailLink.href = "mailto:aarontjones4722@gmail.com"
 
 const emailIcon = document.createElement("img")
-emailIcon.src = "./assets/icons/gmail.png"
+emailIcon.src = "./assets/icons/logos/light/gmail.png"
 emailIcon.className = "social-icon"
 
 emailLink.appendChild(emailIcon)
@@ -385,7 +385,7 @@ function createDownloadButton(fileName: string, filePath: string, iconPath: stri
 const cvDownloadButton = createDownloadButton(
     "cv.pdf", // file name for download
     "./assets/docs/cv.pdf", // file path
-    "./assets/icons/cv.png", // path for icon
+    "./assets/icons/logos/light/cv.png", // path for icon
     "Download CV"
 )
 

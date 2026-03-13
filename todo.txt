@@ -1,5 +1,3 @@
-1) In dark mode, add faint golden background to each box that is behind a symbol - hard to see on phone
-OR
 1) Have light symbols for dark mode, custom make them to have same values as golden background (WILL DO)
 2) Add flavicon
 3) GitHub API rate limiting code
