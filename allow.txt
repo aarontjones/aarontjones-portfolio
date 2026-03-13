@@ -1,1 +1,2 @@
-
+It doesn't matter whats on this file, just as long as this is in the github root directory, it is included in my porfolio website.
+Its not really a good way of doing this, but it works.
