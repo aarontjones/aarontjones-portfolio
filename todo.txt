@@ -1,10 +1,7 @@
-In order of importance:
+1) In dark mode, add faint golden background to each box that is behind a symbol - hard to see on phone
+OR
+1) Have light symbols for dark mode, custom make them to have same values as golden background (WILL DO)
+2) GitHub API rate limiting code
+3) Sort out all code with proper comments
 
-// Just before Launch
-
-1) Sort out all code with proper comments
-2) Prepare code for API rate limiting
-
-
-// launch it
-Connect to internet - also figure out what I want to call it.
+Profit?
