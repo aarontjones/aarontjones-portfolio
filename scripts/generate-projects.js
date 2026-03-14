@@ -42,6 +42,7 @@ async function run() {
         }
     }
 
+    fs.mkdirSync("./data", {recursive: true})
     fs.writeFileSync("./data/projects.json", JSON.stringify(projects, null, 2));
 
     console.log("Projects JSON generated.");
