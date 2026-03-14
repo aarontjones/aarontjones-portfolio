@@ -1,9 +1,0 @@
-git commands:
-
-when changing:
-
-" git add . "
-" git commit -M "message" "
-" git push origin main"
-
-use "git pull origin main to pull from repo"
