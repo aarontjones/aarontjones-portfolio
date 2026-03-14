@@ -225,7 +225,7 @@ rightPanel.append(projectContainer);
 // Github API
 function loadGitHubProjects() {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch("./data/projects.json");
+        const response = yield fetch(`./data/projects.json?cache=${Date.now()}`); // when daily update happens, it works.
         const repos = yield response.json();
         for (const repo of repos) {
             const screenshotContainer = document.createElement("div");

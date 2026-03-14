@@ -292,7 +292,7 @@ rightPanel.append(projectContainer)
 
 async function loadGitHubProjects() {
 
-    const response = await fetch("./data/projects.json")
+    const response = await fetch(`./data/projects.json?cache=${Date.now()}`) // when daily update happens, it works.
     const repos = await response.json()
 
     for (const repo of repos) {
