@@ -31,10 +31,3 @@ jobs:
           git add data/projects.json
           git commit -m "Update projects list" || echo "No changes"
           git push
-
-      - name: Trigger GitHub Pages redeploy
-        if: success()
-        run: |
-          # Make a dummy commit to trigger Pages rebuild if there are no changes
-          git commit --allow-empty -m "Trigger GitHub Pages redeploy [ci skip]"
-          git push
