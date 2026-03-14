@@ -4,5 +4,11 @@
     "description": "This is my portfolio website, written in TypeScript and CSS.\n\nI used TypeScript as I needed to practice my skills with it, as I don't have much experience with it than I do with frameworks such as Django.",
     "repo": "https://github.com/aarontjones/aarontjones",
     "screenshot": "https://raw.githubusercontent.com/aarontjones/aarontjones/main/Screenshot.png"
+  },
+  {
+    "name": "ajWebsite",
+    "description": "Testing to see if this gets properly removed or not",
+    "repo": "https://github.com/aarontjones/ajWebsite",
+    "screenshot": "https://raw.githubusercontent.com/aarontjones/ajWebsite/main/Screenshot.png"
   }
 ]
