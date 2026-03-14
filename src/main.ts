@@ -188,7 +188,7 @@ leftPanel.appendChild(socialContainer)
 //Dark Mode Toggle
 darkModeButton.addEventListener("click", () => {
     const lightMode = document.body.classList.toggle("light-mode"); // toggle class
-    updateThemeIcons(lightMode ? "dark" : "light")
+    updateThemeIcons(lightMode ? "dark" : "light") // changes from light to dark icons upon press of the button
 
     const color = lightMode ? "#7b5cff" : "#d4af37"; // purple or gold
 

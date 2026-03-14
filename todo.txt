@@ -1,4 +1,4 @@
-1) Have light symbols for dark mode, custom make them to have same values as golden background (WILL DO)
+1) fix somewhat pink icons for ticker when website is in light mode
 2) Add flavicon
 3) GitHub API rate limiting code
 4) Sort out all code with proper comments
