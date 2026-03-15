@@ -305,19 +305,16 @@ async function loadGitHubProjects() {
         const header = document.createElement("div")
         header.className = "project-header"
 
-        const title = document.createElement("h3")
+        const title = document.createElement("a")
         title.innerText = repo.name
+        title.href = repo.repo
+        title.target = "_blank"
+        title.className = "project-title"
 
         const description = document.createElement("p")
         description.innerText = repo.description
 
-        const link = document.createElement("a")
-        link.href = repo.repo
-        link.target = "_blank"
-        link.innerText = "View on GitHub"
-
         header.appendChild(title)
-        header.appendChild(link)
 
         screenshotContainer.appendChild(screenshot)
         screenshotContainer.appendChild(description)
