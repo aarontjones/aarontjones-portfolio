@@ -7,7 +7,7 @@
   },
   {
     "name": "tandztats",
-    "description": "",
+    "description": "This is a website for my friend, who is starting his own tattoo business.\n\nYou can visit the website, and explore at www.tandztat.uk\n\nAs of now, It is unfinished, as I am awaiting usage of his Meta API key, to get images onto his website",
     "repo": "https://github.com/aarontjones/tandztats",
     "screenshot": "https://raw.githubusercontent.com/aarontjones/tandztats/main/Screenshot.png"
   }
