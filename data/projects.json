@@ -6,6 +6,12 @@
     "screenshot": "https://raw.githubusercontent.com/aarontjones/aarontjones-portfolio/main/Screenshot.png"
   },
   {
+    "name": "machine-translation",
+    "description": "This project is meant to explore development of creating API's and calling them, as well as machine translation, which I explored in my dissertation project for university.\n\nIt is another TypeScript project, with a python script backend, using a Hugging Face Transformer to translate into spanish.\n\nYou can visit it here: aarontjones.github.io/machine-translation.",
+    "repo": "https://github.com/aarontjones/machine-translation",
+    "screenshot": "https://raw.githubusercontent.com/aarontjones/machine-translation/main/Screenshot.png"
+  },
+  {
     "name": "tandztats",
     "description": "This is a website for my friend, who is starting his own tattoo business.\n\nYou can visit the website, and explore at www.tandztat.uk\n\nAs of now, It is unfinished, as I am awaiting usage of his Meta API key, to get images onto his website",
     "repo": "https://github.com/aarontjones/tandztats",
