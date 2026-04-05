@@ -1,7 +1,26 @@
-# Personal Portfolio Website
+# Personal Portfolio Website (First Project)
 
-This is a simple one-page website, powered by TypeScript for displaying my competency as a programmer, as a means for looking for jobs.
+This is a relatively simple one-page website, powered by TypeScript and CSS, meant to display my competency as a programmer.
 
-The types of projects I will include in my portfolio will be varied, ranging from python scripts / programs, to other websites, and explorations into AI / ML translations, as per my interest at university.
+I chose TypeScript as I wanted to improve my proficiency with JavaScript, and I had already done tonnes of projects using raw HTML or PHP or Django / Flask during university projects.
 
-All the code is open-source for each project, though for obvious reasons if there are API keys, I will be hiding them. I dont mind so much for this project's API key, as the github API is free to use.
+## Types of projects
+
+I will deliver, to a variety of complexity, projects mainly focused on Web Development, Scripting during deployment and explorations into AI / Machine Learning projects, as that is where my interests lie.
+
+## My main Tech Stack
+**Not in order of popularity or experience**
+
+Python, for ML and AI and also Backend API's (see my Machine Translation project)
+TypeScript, for Web Development (Used on this website)
+HTML, for Web Development
+CSS, for Web Development
+PHP, for Web Development
+C / C++, for Software development
+Golang, for backend systems  --- **Need to improve this in particular!**
+Docker, for Containerisation of project(s)
+GitHub / GitHub Actions for CI/CD (Used on this website)
+
+## Final declarations
+
+All code is open source, with exceptions for sensitive information like API keys.
