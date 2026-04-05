@@ -8,6 +8,7 @@
 body {
     background: #0f0f0f;
     color: #e6e6e6;
+    overflow: hidden;
 }
 
 /* Main container section */
@@ -82,7 +83,7 @@ body {
 .profile-pic {
     width: 200px;
     height: 200px;
-    border-radius: 35%; /* Dont really want profile picture to be too circular. may change later */
+    border-radius: 100%; /* Dont really want profile picture to be too circular. may change later */
     object-fit: cover;
     display: block;
     z-index: 1;
@@ -102,7 +103,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 35%;
+    border-radius: 100%;
     z-index: 1;
 
     background: radial-gradient(
@@ -115,9 +116,32 @@ body {
 }
 
 /* Biography Container section */
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%; /* This is for the bars at the side of it */
+
+    letter-spacing: 8px;
+}
+
+.name::before,
+.name::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(
+        to bottom,
+        #2c220d,
+        #7d6424,
+        #2c220d
+    );
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
 
 .bio-container {
-    max-width: 65%;
+    width: 75%;
     text-align: center;
     z-index: 1;
 }
@@ -274,6 +298,34 @@ body {
     padding-top: 10px; /* optional spacing between divider and header */
 }
 
+/* Section Title */
+.section-title {
+    display: flex;
+    gap: 20px;
+    width: 100%; /* This is for the black bars at the side of it */
+
+    letter-spacing: 6px;
+}
+
+/* Scrollable Portfolio */
+.project-scroll {
+    max-height: 59vh; /* Around this value only shows 1 Card */
+    overflow-y: auto;
+    margin: 10px auto 20px auto;
+    width: 90%;
+
+    /* Hide scrollbar (Firefox) */
+    scrollbar-width: none;
+
+    /* Hide Scrollbar (Edge Legacy (Internet explorer)) */
+    -ms-overflow-style: none;
+}
+
+/* Hide Scrollbar (Chrome, Safari, Modern Edge */
+.project-scroll::-webkit-scrollbar {
+    display: none;
+}
+
 .section p {
     padding-bottom: 30px;
     opacity: 0.75; /* fixed opacity */
@@ -283,8 +335,9 @@ body {
 
 .project-header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 10px;
 }
 
@@ -299,8 +352,7 @@ body {
 }
 
 .project-screenshot-container {
-    max-height: 0;
-    overflow: hidden;
+    max-height: none;
     transition: max-height 0.35s ease;
 
     display: flex;
@@ -331,8 +383,10 @@ body {
 }
 
 .project-card {
+    align-self: center;
     background: #111;
     padding: 20px;
+    width: 100%;
     border-radius: 8px;
     position: relative;
     overflow: hidden; /* hides overflow bar above each portfolio project */
@@ -364,11 +418,6 @@ body {
 }
 
 /* Hover effects for portfolio */
-
-.project-card:hover .project-screenshot-container {
-    max-height: 1000px;
-}
-
 .project-card:hover::before {
     opacity: 1;
     box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
@@ -422,7 +471,9 @@ body.light-mode .right-panel {
 body.light-mode .container::after,
 body.light-mode .social-container::before,
 body.light-mode .section:not(:first-child)::before,
-body.light-mode .project-card::before {
+body.light-mode .project-card::before,
+body.light-mode .name::before,
+body.light-mode .name::after {
     background: linear-gradient(
         to bottom,
         #a987fa,
@@ -450,85 +501,83 @@ body.light-mode .project-screenshot {
 /* Smaller Screen Section */
 /* When using website on phone, it wont look good, so this is to help that */
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
 
-  /* Make container vertical */
-  .container {
-    flex-direction: column;
-    height: auto; /* let it grow with content */
-    position: relative;
-  }
+    /* Make container vertical */
+    .container {
+        flex-direction: column;
+        height: auto; /* let it grow with content */
+        position: relative;
+    }
 
-  /* Move divider below socials instead of vertical */
-  .container::after {
-    top: auto;
-    bottom: 30px; /* position just above the bottom padding or socials */
-    left: 0;
-    width: 100%;
-    height: 2px;
-    box-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
-  }
+    /* Move divider below socials instead of vertical */
+    .container::after {
+        top: auto;
+        bottom: 30px; /* position just above the bottom padding or socials */
+        left: 0;
+        width: 100%;
+        height: 2px;
+        box-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
+    }
 
-  /* Left panel full width */
-  .left-panel {
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: auto;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
+    /* Left panel full width */
+    .left-panel {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: auto;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
 
-  /* Keep particle effects absolute inside left panel */
-  #particles-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200px; /* reduce height for mobile, can adjust */
-  }
+    /* Keep particle effects absolute inside left panel */
+    #particles-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px; /* reduce height for mobile, can adjust */
+    }
 
-  /* Right panel full width, stacked below left panel */
-  .right-panel {
-    width: 100%;
-    padding: 20px;
-    overflow: visible; /* no scroll inside panel, body scroll works */
-    margin-bottom: 30px;
-  }
+    /* Right panel full width, stacked below left panel */
+    .right-panel {
+        width: 100%;
+        padding: 20px;
+        overflow: visible; /* no scroll inside panel, body scroll works */
+        margin-bottom: 30px;
+    }
 
-  /* Adjust ticker for mobile */
-  .ticker-wrapper {
-    width: 40%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+    /* Adjust ticker for mobile */
+    .ticker-wrapper {
+        width: 40%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
-  /* Social container full width */
-  .social-container {
-    width: 100%;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
+    /* Social container full width */
+    .social-container {
+        width: 100%;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
 
-  /* Adjust profile and bio containers */
-  .profile-pic-container {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 30px;
-    z-index: 2;
-  }
+    /* Adjust profile and bio containers */
+    .profile-pic-container {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 30px;
+        z-index: 2;
+    }
 
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-  }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
 
-  .bio-container {
-    max-width: 90%;
-  }
-
-  /* Portfolio: automatically expand all screenshots */
-  .project-screenshot-container {
-    max-height: 1000px !important; /* force open */
-  }
+    .bio-container {
+        max-width: 90%;
+    }
 }

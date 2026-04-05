@@ -132,6 +132,7 @@ bioContainer.className = "bio-container"
 
 const name = document.createElement("h1")
 name.innerText = "Aaron T Jones"
+name.className = "name"
 
 const bio = document.createElement("p")
 bio.innerText = "Professional Freelance Programmer"
@@ -247,6 +248,7 @@ function createSection(title: string, content: string) {
 
     const h2 = document.createElement("h2")
     h2.innerText = title
+    h2.className = "section-title"
 
     const p = document.createElement("p")
     p.innerText = content
@@ -258,30 +260,38 @@ function createSection(title: string, content: string) {
 }
 
 // Short about me section
-rightPanel.appendChild(
-    createSection(
-        "About me",
-        `
-        I am Aaron, a long-term programmer, with over 9 years of programming experience throughout GCSE's, A-Levels and University.
-        `
-    )
+const aboutmeSection = createSection(
+    "About me",
+    `
+    I am Aaron, a long-term programmer, with over 9 years of programming experience throughout GCSE's, A-Levels, University and a couple starting freelance projects.
+    `
 )
 
+rightPanel.appendChild(aboutmeSection)
+
 // Portfolio introduction section
-rightPanel.appendChild(
-    createSection(
-        "Project Portfolio",
-        `
-        Check out some of my Projects below!
-        `
-    )
+const portfolioSection = createSection(
+    "Project Portfolio",
+    `
+    Check out some of my projects below by scrolling down. You can click the link to go to the GitHub page!
+    `
 )
+
+rightPanel.appendChild(portfolioSection)
 
 // Portfolio container
 const projectContainer = document.createElement("div")
 projectContainer.className = "project-container"
 
-rightPanel.append(projectContainer)
+// Scrollable project window
+const projectScroll = document.createElement("div")
+projectScroll.className = "project-scroll"
+
+projectScroll.appendChild(projectContainer)
+rightPanel.appendChild(projectScroll)
+
+// Grabbing H2 so it can be updated with amount of projects
+const portfolioTitle = portfolioSection.querySelector("h2") as HTMLHeadingElement
 
 // GitHub Loader
 // Takes input from data/projects.json and loads them for every one in there.
@@ -289,6 +299,11 @@ async function loadGitHubProjects() {
 
     const response = await fetch("./data/projects.json") // when daily update happens, it works.
     const repos = await response.json()
+
+    // Appending amount of repos to title
+    if (portfolioTitle) {
+        portfolioTitle.innerText = `Project Portfolio - (${repos.length})`
+    }
 
     for (const repo of repos) {
 
@@ -323,7 +338,7 @@ async function loadGitHubProjects() {
         card.appendChild(screenshotContainer)
 
         // Layout:
-        // Title         Link To GitHub
+        // Title
         // Screenshot
         // Description
 
@@ -334,38 +349,40 @@ async function loadGitHubProjects() {
 loadGitHubProjects() // Initializes the function
 
 //Experience Section
-rightPanel.appendChild(
-    createSection(
-        "Experience",
-        `
-        I have over 9 years of programming experience, including languages like Python, TypeScript, HTML and CSS and C. Furthermore, I have high technical experience in Docker, AWS, JupyterNotebook, and other industry-standard technologies. 
+const experienceSection = createSection(
+    "Experience",
+    `
+    I possess over 9 years of programming experience, including languages like Python, TypeScript, HTML, CSS and C. Furthermore, I have high technical experience in Docker, AWS, Jupyter Notebook, and other industry-standard technologies. 
 
-        While I do not have much experience professionally with programming jobs, I do have a couple freelance jobs under my belt, as well as other job experience, as stated in my CV.
-        
-        In terms of technical skills, I am extremely proficient in Office 365 (Excel, Word, Powerpoint), AWS, and other skills as shown in the ticker.
-        `
-    )
+    I am a hard worker, keen leaner and a self starter - demonstrated with my projects, as well as freelance opportunities I have completed for clients. I also have miscellaneous job experience, as stated in my CV.
+    `
 )
+
+rightPanel.appendChild(experienceSection)
 
 // Education section
-rightPanel.appendChild(
-    createSection(
-        "Education",
-        `
-        University of the West of England (UWE), Bristol | 2021-2025
-        BSc (Hons) Computer Science - 2:1 Grade
+const educationSection = createSection(
+    "Education",
+    `
+    University of the West of England (UWE), Bristol | 2021-2025
+    BSc (Hons) Computer Science - 2:1 Grade
 
-        Dissertation included an exploration into Machine Translation in a chatroom.
+    Main Takeaways:
 
+    ---Dissertation included an exploration into Machine Translation in a chatroom.
+    ---Multiple team project and exercises both as a leader and not.
+    ---Deep theoretical knowledge of AI and ML pipeline development.
 
-        Clyst Vale Community College, Exeter | 2013-2020 
-        A-Levels: Distinction* (Applied Science BTEC), C (Computer Science), C (History)
-        GCSEs: English Lit (6), English Lang (6), Maths (6), Combined Science (6), Computer Science (5), D&T (C), Religious Studies (4)
+    Clyst Vale Community College, Exeter | 2013-2020 
+    A-Levels: Distinction* (Applied Science BTEC), C (Computer Science), C (History)
+    GCSEs: English Lit (6), English Lang (6), Maths (6), Combined Science (6), Computer Science (5), D&T (C), Religious Studies (4)
 
-        For additional information, you can download my CV below.
-        `
-    )
+    For additional information, you can download my CV below.
+    `
 )
+
+
+rightPanel.appendChild(educationSection)
 
 // CV Download button
 const downloadContainer = document.createElement("div");
